@@ -5,45 +5,47 @@ using System.Threading.Tasks;
 
 namespace FillSpheres
 {
-    public class Sphere
+public class Sphere
+{
+    private Color color;
+    private int radius;
+    private int timesThrown;
+
+    public Sphere(Color color, int radius)
     {
-        private Color color;
-        private int radius;
-        private int timesThrown;
+        this.color = color;
+        this.radius = radius;
+        this.timesThrown = 0;
+    }
 
-        public Sphere(Color color, int radius)
-        {
-            this.color = color;
-            this.radius = radius;
-            this.timesThrown = 0;
-        }
+    public void Pop()
+    {
+        radius = 0;
+    }
 
-        public void Pop()
+    public void Throw()
+    {
+        if (radius > 0)
         {
-            radius = 0;
-        }
-
-        public void Throw()
-        {
-            if (radius > 0)
-            {
-                timesThrown++;
-            }
-        }
-
-        public int GetTimesThrown()
-        {
-            return timesThrown;
-        }
-
-        public Color Color
-        {
-            get { return color; }
-        }
-
-        public int Radius
-        {
-            get { return radius; }
+            timesThrown++;
         }
     }
+
+    public int GetTimesThrown()
+    {
+        return timesThrown;
+    }
+
+    public Color Color
+    {
+        get { return color; }
+        set { color = value; }
+    }
+
+    public int Radius
+    {
+        get { return radius; }
+        set { radius = value; }
+    }
+}
 }
