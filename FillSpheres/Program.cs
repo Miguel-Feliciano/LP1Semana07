@@ -16,7 +16,7 @@ namespace FillSpheres
             Console.WriteLine("Sphere 3: color = [{0}, {1}, {2}], radius = {3}", sphere3.Color.Red, sphere3.Color.Green, sphere3.Color.Blue, sphere3.Radius);
 
             // Toss spheres back and forth
-            int numTosses = 5;
+            const int numTosses = 5;
             for (int i = 0; i < numTosses; i++)
             {
                 if (i % 2 == 0)
